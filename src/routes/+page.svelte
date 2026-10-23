@@ -43,6 +43,7 @@
 </script>
 
 <h1>Ma page</h1>
+<p>Ceci est un test de CI</p>
 
 <Label type="string" label="Nom" bind:textInput={lastname} />
 <Label type="string" label="Prénom" bind:textInput={firstname} />

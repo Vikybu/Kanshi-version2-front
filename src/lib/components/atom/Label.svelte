@@ -15,4 +15,3 @@
     type={type === "number" ? "number" : "text"}
     bind:value={textInput}
 />
-<p>Bonjour</p>
