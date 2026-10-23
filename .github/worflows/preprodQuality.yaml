@@ -4,12 +4,6 @@ on:
   pull_request:
     branches:
       - preprod
-      - main
-
-  push:
-    branches:
-      - preprod
-      - main
 
 permissions:
   contents: read
@@ -116,18 +110,3 @@ jobs:
 
       - name: Build
         run: yarn build
-
-  docker:
-    name: Docker build
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Build Docker image
-        run: |
-          docker build \
-            -t kanshi-frontend:test \
-            .
