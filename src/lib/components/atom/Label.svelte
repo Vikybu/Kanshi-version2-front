@@ -11,5 +11,7 @@
 </script>
 
 <p>{label}</p>
-<input type={type === 'number' ? 'number' : 'text'} bind:value={textInput} />
-<p>Bonjour</p>
+<input
+    type={type === "number" ? "number" : "text"}
+    bind:value={textInput}
+/>
