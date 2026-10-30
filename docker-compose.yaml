@@ -2,12 +2,12 @@ services:
   frontend:
     build: ../kanshi-front
     ports:
-      - "5173:5173"
+      - '5173:5173'
 
   backend:
     build: ../kanshi-back/Kanshi
     ports:
-      - "8080:8080"
+      - '8080:8080'
 
   database:
     image: postgres:18

@@ -1,7 +1,7 @@
 <script lang="ts">
-    import Text from "../atom/Text.svelte";
+	import Text from '../atom/Text.svelte';
 </script>
 
 <div class="card">
-    <Text text="Bonjour !" />
+	<Text text="Bonjour !" />
 </div>
