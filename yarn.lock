@@ -268,6 +268,16 @@
   resolved "https://registry.yarnpkg.com/@sveltejs/adapter-auto/-/adapter-auto-7.0.1.tgz#a2bf530d934ddc9b865966c2702614da258ab7bc"
   integrity sha512-dvuPm1E7M9NI/+canIQ6KKQDU2AkEefEZ2Dp7cY6uKoPq9Z/PhOXABe526UdW2mN986gjVkuSLkOYIBnS/M2LQ==
 
+"@sveltejs/adapter-node@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-node/-/adapter-node-6.0.1.tgz#7f9f95a40e27ca10751404b4c9ff48c94a86cb45"
+  integrity sha512-Pt/YcMakEkTjdQXaAvxrjrDnoGX4zU7pAZICnoLfpI+CawLGigq5upjFW9rVK2QY7yfpR1xeRG/kgI+syzPB3w==
+
+"@sveltejs/adapter-static@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-static/-/adapter-static-4.0.1.tgz#1e0db2d52d22881a0d64252345766f1c0bf91a87"
+  integrity sha512-svOU1OcBiJ9Kn1cdxHDmJIsBy1/iQe9STPvUFkO2/iinxPFS7r8fc9TiCaWWUgbrE+7ox6Bt4MURv3RPi7sunQ==
+
 "@sveltejs/kit@^2.63.0":
   version "2.70.3"
   resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-2.70.3.tgz#29199518912d79989cfd0460b1c931ff2dc1deb6"

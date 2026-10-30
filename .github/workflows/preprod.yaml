@@ -32,5 +32,4 @@ jobs:
           context: .
           platforms: linux/arm64
           push: true
-          no-cache: true
           tags: vikybuu/mon-front:preprod
