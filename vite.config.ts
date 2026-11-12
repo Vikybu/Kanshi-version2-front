@@ -3,16 +3,11 @@ import { playwright } from '@vitest/browser-playwright';
 import { sveltekit } from '@sveltejs/kit/vite';
 
 export default defineConfig({
-	plugins: [
-		sveltekit({
-			compilerOptions: {
-				runes: ({ filename }) =>
-					filename.split(/[/**\\**]/).includes('node_modules') ? undefined : true
-			}
-		})
-	],
+	plugins: [sveltekit()],
+
 	test: {
 		expect: { requireAssertions: true },
+
 		projects: [
 			{
 				extends: './vite.config.ts',
