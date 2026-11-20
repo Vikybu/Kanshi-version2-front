@@ -1,13 +1,13 @@
 import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
-import { API_URL } from '$env/static/private';
+import { env } from '$env/dynamic/private';
 import { dev } from '$app/environment';
 
 export const POST: RequestHandler = async ({ request, cookies, fetch }) => {
 	try {
 		const { registrationNumber, password } = await request.json();
 
-		const response = await fetch(`${API_URL}/api/auth/login`, {
+		const response = await fetch(`${env.API_URL}/api/auth/login`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
