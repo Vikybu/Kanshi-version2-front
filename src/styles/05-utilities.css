@@ -1,0 +1,44 @@
+/* Display */
+.d-flex {
+  display: flex;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.d-none {
+  display: none;
+}
+
+/* Alignment */
+.align-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+/* Text */
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+/* Width */
+.w-full {
+  width: 100%;
+}
+
+/* Spacing */
+.mt-2 {
+  margin-top: var(--space-2);
+}
+
+.mb-4 {
+  margin-bottom: var(--space-4);
+}
