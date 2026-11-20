@@ -25,10 +25,10 @@
 </script>
 
 <button
-	class="btn btn--{variant} btn--{size}"
 	{type}
 	{disabled}
 	{onclick}
+	class={`${variant} ${size}`}
 	style:background-color={color}
 	style:color={textColor}
 	style:font-size={fontSize}

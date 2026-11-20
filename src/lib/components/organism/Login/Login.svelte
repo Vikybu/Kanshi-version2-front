@@ -4,6 +4,7 @@
 	import RegistrationNumber from '$lib/components/molecule/RegistrationNumber.svelte';
 	import { login } from '$lib/services/auth';
 	import { goto } from '$app/navigation';
+	import { resolve } from '$app/paths';
 
 	import './login.css';
 
@@ -23,7 +24,13 @@
 
 			console.log('Connexion réussie :', data);
 
-			await goto('/');
+			if (data.user.role === 'admin') {
+				await goto(resolve('/admin'));
+			} else if (data.user.role === 'ouvrier') {
+				await goto(resolve('/ouvrier'));
+			} else {
+				errorMessage = 'Rôle utilisateur non reconnu.';
+			}
 		} catch (error) {
 			console.error('Erreur de connexion :', error);
 
@@ -57,18 +64,21 @@
 				bind:value={registrationNumber}
 				onfocus={() => (selectedInput = 'registrationNumber')}
 			/>
+
 			<Password bind:value={password} onfocus={() => (selectedInput = 'password')} />
 
 			<div class="login-actions">
 				<Button
-					text="Se connecter"
+					text={loading ? 'Connexion...' : 'Se connecter'}
 					variant="primary"
-					type="submit"
+					type="button"
 					color="var(--text-primary)"
 					textColor="var(--text-secondary)"
 					fontSize="var(--m)"
 					onclick={handleLogin}
+					disabled={loading}
 				/>
+
 				{#if errorMessage}
 					<p class="error-message">{errorMessage}</p>
 				{/if}
@@ -76,7 +86,7 @@
 		</div>
 
 		<div class="login-keypad">
-			{#each ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'] as number}
+			{#each ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'] as number (number)}
 				<Button
 					text={number}
 					variant="primary"
@@ -86,14 +96,15 @@
 					onclick={() => addNumber(number)}
 				/>
 			{/each}
+
 			<Button
 				text="<-"
 				variant="primary"
-				type="submit"
+				type="button"
 				color="var(--text-primary)"
 				textColor="var(--text-secondary)"
 				fontSize="var(--m)"
-				onclick={() => deleteNumber()}
+				onclick={deleteNumber}
 			/>
 		</div>
 	</div>
