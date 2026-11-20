@@ -1,17 +1,7 @@
 <script>
-    import Input from "$lib/components/atom/Input/Input.svelte"
+	import Input from '$lib/components/atom/Input/Input.svelte';
 
-     let {
-        value = $bindable(""),
-        onfocus
-    } = $props();
+	let { value = $bindable(''), onfocus } = $props();
 </script>
 
-<Input
-    bind:value
-    {onfocus}
-    name="password"
-    type="string"
-    required={true}
-    label = "Mot de passe"
-/>
+<Input bind:value {onfocus} name="password" type="string" required={true} label="Mot de passe" />

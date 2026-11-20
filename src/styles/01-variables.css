@@ -1,31 +1,31 @@
 :root {
-  /* Couleurs */
-  --bg-primary: #D3D3DD;
-  --bg-secondary: #291E48;
+	/* Couleurs */
+	--bg-primary: #d3d3dd;
+	--bg-secondary: #291e48;
 
-  --color-primary: #D3D3DD;
-  --color-danger: #291E48;
+	--color-primary: #d3d3dd;
+	--color-danger: #291e48;
 
-  --text-primary: #D3D3DD;
-  --text-secondary: #291E48;
+	--text-primary: #d3d3dd;
+	--text-secondary: #291e48;
 
-  --border: #e5e7eb;
+	--border: #e5e7eb;
 
-  /* Arrondis */
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
+	/* Arrondis */
+	--radius-sm: 6px;
+	--radius-md: 10px;
+	--radius-lg: 16px;
 
-  /* Ombres */
-  --shadow-md: 0 4px 12px rgb(0 0 0 / 10%);
+	/* Ombres */
+	--shadow-md: 0 4px 12px rgb(0 0 0 / 10%);
 
-  /* Taille */
-  --s: 16px;
-  --m: 24px;
-  --l: 32px;
-  --xl: 42px;
+	/* Taille */
+	--s: 16px;
+	--m: 24px;
+	--l: 32px;
+	--xl: 42px;
 
-  /* Font */
-  --font-primary: "Fira Code", monospace;
-  --font-secondary: "Zen Maru Gothic", sans-serif;
+	/* Font */
+	--font-primary: 'Fira Code', monospace;
+	--font-secondary: 'Zen Maru Gothic', sans-serif;
 }
