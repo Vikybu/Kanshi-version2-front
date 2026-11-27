@@ -3,6 +3,8 @@
 	import logoKanshi from '$lib/assets/logoKanshi.png';
 	import Menu from '$lib/components/organism/Menu.svelte';
 	import Clock from '$lib/components/atom/Clock.svelte';
+	import OFForm from '$lib/components/organism/OFForm.svelte';
+	import CardOF from '$lib/components/organism/CardOF.svelte';
 </script>
 
 <svelte:head>
@@ -21,6 +23,12 @@
 		<Clock />
 	</header>
 	<br />
+
+	<p class="titel-gestion">Gestion des ordres de fabrications</p>
+	<div class="of-form">
+		<CardOF />
+		<OFForm />
+	</div>
 </div>
 
 <style>
@@ -63,5 +71,15 @@
 		font-family: var(--font-secondary);
 		font-size: var(--m);
 		color: var(--text-secondary);
+	}
+
+	.of-form {
+		display: flex;
+	}
+
+	.titel-gestion {
+		margin: 10px;
+		font-weight: 600;
+		font-size: var(--m);
 	}
 </style>
