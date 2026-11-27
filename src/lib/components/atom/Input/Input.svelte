@@ -1,42 +1,43 @@
 <script lang="ts">
-    let {
-        value = $bindable(''),
-        onfocus,
-        label = '',
-        placeholder = '',
-        type = 'text',
-        name = '',
-        required = false,
-        variant = 'login',
-        ...props
-    } = $props();
+	let {
+		value = $bindable(''),
+		onfocus,
+		label = '',
+		placeholder = '',
+		type = 'text',
+		name = '',
+		required = false,
+		variant = 'login',
+		...props
+	} = $props();
 </script>
 
 <div class="input-group">
-    <label for={name} class="label label--{variant}">
-    	{label}
+	<label for={name} class="label label--{variant}">
+		{label}
 	</label>
 
-    <input
-        {...props}
-        {onfocus}
-        class="input input--{variant}"
-        id={name}
-        {name}
-        {type}
-        bind:value
-        {placeholder}
-        {required}
-    />
+	<input
+		{...props}
+		{onfocus}
+		class="input input--{variant}"
+		id={name}
+		{name}
+		{type}
+		bind:value
+		{placeholder}
+		{required}
+	/>
 </div>
 
 <style>
-
 	.input {
 		width: 100%;
 		box-sizing: border-box;
 		outline: none;
-		transition: border-color 0.2s ease, box-shadow 0.2s ease;
+		transition:
+			border-color 0.2s ease,
+			box-shadow 0.2s ease;
 	}
 
 	/* LOGIN : RegistrationNumber et Password */
@@ -60,7 +61,6 @@
 		border: 1px solid var(--border);
 		border-radius: 6px;
 		box-sizing: border-box;
-		
 	}
 
 	.input-group {
@@ -81,7 +81,7 @@
 		opacity: 0.6;
 		cursor: not-allowed;
 	}
-	
+
 	/* Style commun */
 	.label {
 		font-family: var(--font-primary);

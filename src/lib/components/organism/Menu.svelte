@@ -25,7 +25,7 @@
 	.menu {
 		display: flex;
 		align-items: center;
-        font-size: var(--m);
+		font-size: var(--m);
 	}
 
 	.menu-item {

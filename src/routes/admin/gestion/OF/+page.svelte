@@ -23,10 +23,8 @@
 		<Clock />
 	</header>
 	<br />
-	
-	<p class="titel-gestion">
-		Gestion des ordres de fabrications
-	</p>
+
+	<p class="titel-gestion">Gestion des ordres de fabrications</p>
 	<div class="of-form">
 		<CardOF />
 		<OFForm />
@@ -77,13 +75,11 @@
 
 	.of-form {
 		display: flex;
-
 	}
 
 	.titel-gestion {
-		margin:10px;
+		margin: 10px;
 		font-weight: 600;
 		font-size: var(--m);
 	}
 </style>
-
