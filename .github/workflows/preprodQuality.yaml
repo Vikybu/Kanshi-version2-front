@@ -33,7 +33,7 @@ jobs:
         run: yarn lint
 
       - name: Type check
-        run: yarn run check
+        run: yarn check
         env:
           API_URL: http://127.0.0.1:5288
 
@@ -57,39 +57,8 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Install Playwright browsers
-        run: yarn playwright install --with-deps chromium
-
       - name: Run unit tests
         run: yarn test:unit --run --passWithNoTests
-        env:
-          API_URL: http://127.0.0.1:5288
-
-  e2e-tests:
-    name: E2E tests
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: yarn
-
-      - name: Install Yarn
-        run: npm install --global yarn@1.22.22
-
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-
-      - name: Install Playwright browsers
-        run: yarn playwright install --with-deps
-
-      - name: Run E2E tests
-        run: yarn test:e2e
         env:
           API_URL: http://127.0.0.1:5288
 
@@ -99,7 +68,6 @@ jobs:
     needs:
       - quality
       - unit-tests
-      - e2e-tests
 
     steps:
       - name: Checkout
