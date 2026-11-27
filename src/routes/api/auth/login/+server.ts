@@ -32,7 +32,7 @@ export const POST: RequestHandler = async ({ request, cookies, fetch }) => {
 			secure: !dev,
 			sameSite: 'lax',
 			path: '/',
-			maxAge: 60 * 60 * 2
+			maxAge: 60 * 60 * 8
 		});
 
 		return json({

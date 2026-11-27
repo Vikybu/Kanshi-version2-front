@@ -25,7 +25,7 @@
 			console.log('Connexion réussie :', data);
 
 			if (data.user.role === 'admin') {
-				await goto(resolve('/admin'));
+				await goto(resolve('/admin/accueil'));
 			} else if (data.user.role === 'ouvrier') {
 				await goto(resolve('/ouvrier'));
 			} else {
@@ -162,10 +162,6 @@
 	}
 
 	.login-actions {
-		width: 100%;
-	}
-
-	.login-actions .btn {
 		width: 100%;
 	}
 
