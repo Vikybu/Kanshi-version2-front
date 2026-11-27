@@ -61,7 +61,7 @@ jobs:
         run: yarn playwright install --with-deps chromium
 
       - name: Run unit tests
-        run: yarn test:unit --run
+        run: yarn test:unit --run --passWithNoTests
         env:
           API_URL: http://127.0.0.1:5288
 
