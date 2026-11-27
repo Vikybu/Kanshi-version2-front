@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '../../../styles/main.css';
+	import '../../../../styles/main.css';
 	import logoKanshi from '$lib/assets/logoKanshi.png';
 	import Menu from '$lib/components/organism/Menu.svelte';
 	import Clock from '$lib/components/atom/Clock.svelte';
