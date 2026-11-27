@@ -1,6 +1,4 @@
 <script lang="ts">
-	import './input.css';
-
 	let {
 		value = $bindable(''),
 		onfocus,
@@ -30,3 +28,60 @@
 		{required}
 	/>
 </div>
+
+<style>
+
+	.input {
+		width: 100%;
+		min-height: 40px;
+		padding: 8px 12px;
+
+		font-size: var(--m);
+		color: var(--text-primary);
+
+		background: var(--background);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-md);
+
+		outline: none;
+		transition:
+			border-color 0.2s ease,
+			box-shadow 0.2s ease;
+
+		box-sizing: border-box;
+	}
+
+	.input-group {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	/* LABEL */
+	.input-group label {
+		font-family: var(--font-primary);
+		font-size: var(--m);
+		font-weight: 500;
+		color: var(--text-primary);
+	}
+
+	/* Placeholder */
+	.input::placeholder {
+		color: var(--text-primary);
+		opacity: 0.8;
+	}
+
+	/* Focus */
+	.input:focus {
+		border-color: var(--primary);
+		box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+	}
+
+	/* Disabled */
+	.input:disabled {
+		background: var(--surface);
+		opacity: 0.6;
+		cursor: not-allowed;
+	}
+
+</style>

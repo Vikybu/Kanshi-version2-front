@@ -1,12 +1,12 @@
 <script lang="ts">
 	import Password from '$lib/components/molecule/Password.svelte';
 	import Button from '$lib/components/atom/Button/Button.svelte';
-	import RegistrationNumber from '$lib/components/molecule/RegistrationNumber.svelte';
-	import { login } from '$lib/services/auth';
+	import { ArrowLeft, Check } from '@lucide/svelte';
+	
 	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
-
-	import './login.css';
+	import RegistrationNumber from '$lib/components/molecule/RegistrationNumber.svelte';
+	import { login } from '$lib/services/auth';
 
 	let registrationNumber = $state('');
 	let password = $state('');
@@ -42,9 +42,9 @@
 
 	function addNumber(number: string) {
 		if (selectedInput === 'registrationNumber') {
-			registrationNumber += number;
+			registrationNumber = (registrationNumber ?? '') + number;
 		} else {
-			password += number;
+			password = (password ?? '') + number;
 		}
 	}
 
@@ -86,7 +86,7 @@
 		</div>
 
 		<div class="login-keypad">
-			{#each ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'] as number (number)}
+			{#each ['1', '2', '3', '4', '5', '6', '7', '8', '9'] as number (number)}
 				<Button
 					text={number}
 					variant="primary"
@@ -98,14 +98,102 @@
 			{/each}
 
 			<Button
-				text="<-"
 				variant="primary"
-				type="button"
+				color="var(--text-primary)"
+				textColor="var(--text-secondary)"
+				onclick={handleLogin}
+				disabled={loading}
+			>
+				<Check size={20} strokeWidth={2.5} />
+			</Button>
+
+			<Button
+				text="0"
+				variant="primary"
 				color="var(--text-primary)"
 				textColor="var(--text-secondary)"
 				fontSize="var(--m)"
-				onclick={deleteNumber}
+				onclick={() => addNumber('0')}
 			/>
+
+			<Button
+				variant="primary"
+				color="var(--text-primary)"
+				textColor="var(--text-secondary)"
+				onclick={deleteNumber}
+			>
+				<ArrowLeft size={20} strokeWidth={2.5} />
+			</Button>
 		</div>
 	</div>
 </div>
+
+<style>
+	.login-global {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	}
+
+	.login-card {
+		width: min(90%, 65rem);
+		flex: 0 1 auto;
+		min-height: 0;
+
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+		gap: 3%;
+
+		padding: clamp(1rem, 2.5vw, 2rem);
+		box-sizing: border-box;
+
+		background: var(--bg-secondary);
+		border-radius: var(--radius-lg);
+		box-shadow: var(--shadow-md);
+	}
+
+	.login-form {
+		display: flex;
+		flex-direction: column;
+		gap: clamp(0.75rem, 2vh, 1.5rem);
+		min-width: 0;
+	}
+
+	.login-actions {
+		width: 100%;
+	}
+
+	.login-actions .btn {
+		width: 100%;
+	}
+
+	.login-keypad {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: clamp(0.5rem, 1.5vw, 0.75rem);
+		align-content: start;
+	}
+
+	.error-message {
+		color: red;
+	}
+
+	@media (min-width: 601px) and (max-width: 1024px) {
+		.login-card {
+			width: 94%;
+			gap: 3%;
+			padding: 3%;
+		}
+
+		.login-form {
+			gap: 1rem;
+		}
+
+		.login-keypad {
+			gap: 0.5rem;
+		}
+	}
+
+</style>
