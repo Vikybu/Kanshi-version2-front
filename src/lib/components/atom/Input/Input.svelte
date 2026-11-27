@@ -30,7 +30,6 @@
 </div>
 
 <style>
-
 	.input {
 		width: 100%;
 		min-height: 40px;
@@ -83,5 +82,4 @@
 		opacity: 0.6;
 		cursor: not-allowed;
 	}
-
 </style>

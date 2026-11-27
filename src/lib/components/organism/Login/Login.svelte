@@ -2,7 +2,7 @@
 	import Password from '$lib/components/molecule/Password.svelte';
 	import Button from '$lib/components/atom/Button/Button.svelte';
 	import { ArrowLeft, Check } from '@lucide/svelte';
-	
+
 	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
 	import RegistrationNumber from '$lib/components/molecule/RegistrationNumber.svelte';
@@ -130,11 +130,11 @@
 
 <style>
 	.login-global {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 0;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0;
 	}
 
 	.login-card {
@@ -195,5 +195,4 @@
 			gap: 0.5rem;
 		}
 	}
-
 </style>

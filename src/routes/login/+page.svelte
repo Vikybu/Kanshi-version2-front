@@ -59,5 +59,4 @@
 			width: clamp(80px, 20vw, 180px);
 		}
 	}
-
 </style>

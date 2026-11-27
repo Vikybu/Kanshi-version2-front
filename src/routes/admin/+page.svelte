@@ -1,7 +1,6 @@
 <script lang="ts">
 	import '../../styles/main.css';
 	import logoKanshi from '$lib/assets/logoKanshi.png';
-
 </script>
 
 <svelte:head>
@@ -20,7 +19,7 @@
 		background: var(--bg-tertiary);
 	}
 
-		.login-logo {
+	.login-logo {
 		display: block;
 		width: clamp(50px, 20vw, 60px);
 		height: auto;

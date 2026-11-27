@@ -1,4 +1,3 @@
-
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 
@@ -30,20 +29,20 @@
 </script>
 
 <button
-    type={type}
-    class="btn btn--{variant} btn--{size}"
-    style:background-color={color}
-    style:color={textColor}
-    style:font-size={fontSize}
-    style:font-family={fontFamily}
-    {disabled}
-    {onclick}
+	{type}
+	class="btn btn--{variant} btn--{size}"
+	style:background-color={color}
+	style:color={textColor}
+	style:font-size={fontSize}
+	style:font-family={fontFamily}
+	{disabled}
+	{onclick}
 >
-    {#if children}
-        {@render children()}
-    {:else}
-        {text}
-    {/if}
+	{#if children}
+		{@render children()}
+	{:else}
+		{text}
+	{/if}
 </button>
 
 <style>
@@ -58,7 +57,9 @@
 		font-size: 14px;
 		font-weight: 500;
 		cursor: pointer;
-		transition: background-color 0.2s ease, opacity 0.2s ease;
+		transition:
+			background-color 0.2s ease,
+			opacity 0.2s ease;
 		font-family: var(--font-primary);
 		box-shadow: none;
 		transform: none;
